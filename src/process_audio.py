@@ -28,7 +28,7 @@ def process_audio_file(audio_file):
 
     except Exception as e:
         print(f"Error: {str(e)}")
-        logger.error(f"Error: {str(e)}")
+        logger.error(f"Error: {str(e)}", exc_info=True)
 
 
 if __name__ == "__main__":

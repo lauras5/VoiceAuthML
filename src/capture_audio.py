@@ -39,7 +39,7 @@ def capture_audio_to_file(output_file, duration=5, sample_rate=44100, channels=1
 
     except Exception as e:
         print(f"Error: {str(e)}")
-        logger.error(f"Error: {str(e)}")
+        logger.error(f"Error: {str(e)}", exc_info=True)
         return False
 
     return True
