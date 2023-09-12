@@ -1,14 +1,14 @@
 import librosa
 import librosa.display
+import numpy as np
 import matplotlib.pyplot as plt
 from logging_config import logger
-
+from paths import AUDIO_PATH
 
 def process_audio_file(audio_file):
     try:
         # Load the audio file
-        y, sr = librosa.load(audio_file)
-
+        y, sr = librosa.load(audio_file, dtype=np.float32)
         # Extract audio features (e.g., MFCCs)
         mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=40)
 
@@ -32,5 +32,5 @@ def process_audio_file(audio_file):
 
 
 if __name__ == "__main__":
-    recorded_audio_file = "../data/audio_samples/recorded_audio_20230911_1655.wav"
+    recorded_audio_file = f"{AUDIO_PATH}recorded_audio_20230911_1655.wav"
     process_audio_file(recorded_audio_file)

@@ -4,6 +4,7 @@ import wave
 import time
 import sys
 
+from paths import AUDIO_PATH
 from logging_config import logger
 
 # duration in seconds
@@ -47,5 +48,5 @@ def capture_audio_to_file(output_file, duration=5, sample_rate=44100, channels=1
 # test
 if __name__ == "__main__":
     timestr = time.strftime("%Y%m%d_%H%M")
-    out_filename = f"../data/audio_samples/recorded_audio_{timestr}.wav"
+    out_filename = f"{AUDIO_PATH}/recorded_audio_{timestr}.wav"
     capture_audio_to_file(out_filename, duration=5)

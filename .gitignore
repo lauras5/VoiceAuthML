@@ -1,5 +1,6 @@
 /data
 /logs
+src/paths.py
 
 # Python
 __pycache__/

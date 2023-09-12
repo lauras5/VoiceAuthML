@@ -1,9 +1,10 @@
 import logging
 import sys
 import traceback
+from paths import DIR_PATH
 
 logging.basicConfig(
-    filename='./logs/error.log',
+    filename=f'{DIR_PATH}logs/error.log',
     level=logging.ERROR,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
